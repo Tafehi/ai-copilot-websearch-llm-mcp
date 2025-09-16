@@ -1,0 +1,30 @@
+# --- Core LLM & Orchestration ---
+langchain
+langchain-community
+langchain-mcp-adapters
+langchain-ollama
+langgraph
+openai
+# --- streamlit micro ---
+streamlit-mic-recorder
+soundfile
+numpy
+scipy
+vosk==0.3.42
+# --- MCP (Model Context Protocol) ---
+mcp[cli]
+# --- NEO4J DB ---
+neo4j
+# --- Web tools for browsing (fetch/scrape/summarize) ---
+httpx
+beautifulsoup4
+readability-lxml
+lxml
+
+# --- App & Env ---
+streamlit
+python-dotenv
+
+# --- Dev tools (formatting) ---
+black
+isort
