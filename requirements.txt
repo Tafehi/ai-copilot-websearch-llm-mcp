@@ -4,7 +4,7 @@ langchain-community
 langchain-mcp-adapters
 langchain-ollama
 langgraph
-openai
+langchain_aws
 # --- streamlit micro ---
 streamlit-mic-recorder
 soundfile
@@ -13,8 +13,7 @@ scipy
 vosk==0.3.42
 # --- MCP (Model Context Protocol) ---
 mcp[cli]
-# --- NEO4J DB ---
-neo4j
+boto3
 # --- Web tools for browsing (fetch/scrape/summarize) ---
 httpx
 beautifulsoup4
