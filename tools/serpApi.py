@@ -16,7 +16,7 @@ BASE_URL = os.getenv("SERP_SEARCH_URL")
 TIMEOUT = float(os.getenv("SERP_SEARCH_TIMEOUT", "10"))
 
 # Initialize MCP tool server
-mcp = FastMCP(name="serpSearch", host="localhost", port=8001)
+mcp = FastMCP(name="serpSearch", host="localhost", port=8003)
 
 
 def _extract_results(data: Dict[str, Any]) -> List[Dict[str, str]]:

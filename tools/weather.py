@@ -18,7 +18,7 @@ if not url or not api_key:
     raise EnvironmentError("Missing WEATHER_URL or WEATHER_API_KEY in .env file")
 
 # Initialize MCP
-mcp = FastMCP(name="weather", host="localhost", port=8002)
+mcp = FastMCP(name="weather", host="localhost", port=8004)
 
 
 @mcp.tool()

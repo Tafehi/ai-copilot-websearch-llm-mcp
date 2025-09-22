@@ -59,7 +59,6 @@ def tool_use_instructions() -> str:
         "  • You are not confident your internal answer is correct and current.\n"
         "- Prefer domain tools when available (e.g., 'weather' for weather, 'serpSearch' for general web verification).\n"
         "- When using web search or tools, replace also include date at the end of the response\n"
-
     )
 
 

@@ -13,6 +13,7 @@ temporary_memory = []
 
 KNOWLEDGE_CUTOFF = "2024-06-01"
 
+
 def _to_lc_messages(messages_dict_list):
     out = []
     for m in messages_dict_list:
@@ -25,6 +26,7 @@ def _to_lc_messages(messages_dict_list):
         elif role == "system":
             out.append(SystemMessage(content=content))
     return out
+
 
 async def agents(llm_model, llm_provider, question):
     global mcp_client, temporary_memory
@@ -39,8 +41,14 @@ async def agents(llm_model, llm_provider, question):
 
     # MCP servers
     servers = {
-        "serpSearch": {"url": "http://localhost:8001/mcp/", "transport": "streamable_http"},
-        "weather":    {"url": "http://localhost:8002/mcp/", "transport": "streamable_http"},
+        "serpSearch": {
+            "url": "http://localhost:8003/mcp/",
+            "transport": "streamable_http",
+        },
+        "weather": {
+            "url": "http://localhost:8004/mcp/",
+            "transport": "streamable_http",
+        },
     }
 
     # Initialize MCP client and load tools
@@ -80,7 +88,9 @@ async def agents(llm_model, llm_provider, question):
     response = await agent.ainvoke({"messages": call_messages})
 
     # Extract and persist turn
-    final_content = response["messages"][-1].content if response.get("messages") else str(response)
+    final_content = (
+        response["messages"][-1].content if response.get("messages") else str(response)
+    )
     temporary_memory.append({"role": "user", "content": question})
     temporary_memory.append({"role": "assistant", "content": final_content})
     return final_content

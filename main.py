@@ -54,7 +54,9 @@ model = st.sidebar.selectbox(
 
 # Sidebar: Loaded Agents/Tools
 st.sidebar.markdown("### Logs for Agents/Tools from MCP Server")
-log_placeholder = "logs related to the agents and tools generated from MCP server will appear here."
+log_placeholder = (
+    "logs related to the agents and tools generated from MCP server will appear here."
+)
 st.sidebar.text_area("Logs", log_placeholder, height=150)
 
 # Main area: Chatbot interface
